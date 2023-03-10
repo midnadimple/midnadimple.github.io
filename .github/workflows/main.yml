@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: set_branch
+        run: git config --global init.defaultBranch main
       - name: checkout
         uses: actions/checkout@v3.0.0
       - name: build_and_deploy
